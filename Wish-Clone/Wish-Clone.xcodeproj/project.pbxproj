@@ -15,6 +15,9 @@
 		3704C71026402D5A004DE8EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3704C70E26402D5A004DE8EA /* LaunchScreen.storyboard */; };
 		3704C71B26402D5A004DE8EA /* Wish_CloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3704C71A26402D5A004DE8EA /* Wish_CloneTests.swift */; };
 		3704C72626402D5B004DE8EA /* Wish_CloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3704C72526402D5B004DE8EA /* Wish_CloneUITests.swift */; };
+		3704C73826403758004DE8EA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3704C73726403757004DE8EA /* SettingsViewController.swift */; };
+		3704C73F264040E5004DE8EA /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3704C73D264040E5004DE8EA /* SettingsTableViewCell.swift */; };
+		3704C740264040E5004DE8EA /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3704C73E264040E5004DE8EA /* SettingsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		3704C72126402D5B004DE8EA /* Wish-CloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wish-CloneUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3704C72526402D5B004DE8EA /* Wish_CloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wish_CloneUITests.swift; sourceTree = "<group>"; };
 		3704C72726402D5B004DE8EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3704C73726403757004DE8EA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3704C73D264040E5004DE8EA /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		3704C73E264040E5004DE8EA /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 		3704C70226402D54004DE8EA /* Wish-Clone */ = {
 			isa = PBXGroup;
 			children = (
+				3704C73C264040A5004DE8EA /* Cells */,
+				3704C73626403729004DE8EA /* ViewControllers */,
 				3704C70326402D54004DE8EA /* AppDelegate.swift */,
 				3704C70526402D54004DE8EA /* SceneDelegate.swift */,
 				3704C70726402D54004DE8EA /* ViewController.swift */,
@@ -126,6 +134,23 @@
 				3704C72726402D5B004DE8EA /* Info.plist */,
 			);
 			path = "Wish-CloneUITests";
+			sourceTree = "<group>";
+		};
+		3704C73626403729004DE8EA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3704C73726403757004DE8EA /* SettingsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3704C73C264040A5004DE8EA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3704C73D264040E5004DE8EA /* SettingsTableViewCell.swift */,
+				3704C73E264040E5004DE8EA /* SettingsTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +258,7 @@
 			files = (
 				3704C71026402D5A004DE8EA /* LaunchScreen.storyboard in Resources */,
 				3704C70D26402D5A004DE8EA /* Assets.xcassets in Resources */,
+				3704C740264040E5004DE8EA /* SettingsTableViewCell.xib in Resources */,
 				3704C70B26402D54004DE8EA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +287,8 @@
 				3704C70826402D54004DE8EA /* ViewController.swift in Sources */,
 				3704C70426402D54004DE8EA /* AppDelegate.swift in Sources */,
 				3704C70626402D54004DE8EA /* SceneDelegate.swift in Sources */,
+				3704C73F264040E5004DE8EA /* SettingsTableViewCell.swift in Sources */,
+				3704C73826403758004DE8EA /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
