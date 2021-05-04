@@ -11,7 +11,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var SettingsTableView: UITableView!
     
-    let headers = ["Shop","Account","Rewards & Promotions","Support","Settings"]
+    let headers = ["Profile","Shop","Account","Rewards & Promotions","Support","Settings"]
     let ShopList = ["Browse","Search"]
     let AccountList = ["Order History","Notifications"]
     let RewardsList = ["Earn £160","Wish Cash","Rewards","Daily Login Bonus","Apply Promo/e-Gift Cards"]
@@ -21,6 +21,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         switch headers[section] {
+        case "Profile":
+            return 1
         case "Shop":
             return ShopList.count
         case "Account":
@@ -40,18 +42,34 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         headers.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return headers[section]
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = SettingsTableView.dequeueReusableCell(withIdentifier: "SettingsHeaderTableViewCell") as! SettingsHeaderTableViewCell
+        headerView.SetUpCell(title: headers[section])
+        return headerView.contentView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell") as! SettingsTableViewCell
-        cell.SetUpCell(title: GetTitleFromSection(indexPath: indexPath))
-        return cell
+        if (headers[indexPath.section] == "Profile")
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell") as! ProfileTableViewCell
+            return cell
+        }
+        else
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell") as! SettingsTableViewCell
+            cell.SetUpCell(title: GetTitleFromSection(indexPath: indexPath))
+            return cell
+        }
     }
     
     func GetTitleFromSection(indexPath :IndexPath) -> String {
         switch headers[indexPath.section] {
+        case "Profile":
+            return ""
         case "Shop":
             return ShopList[indexPath.row]
         case "Account":
@@ -70,6 +88,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         SettingsTableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingsTableViewCell")
+        SettingsTableView.register(UINib(nibName: "SettingsHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingsHeaderTableViewCell")
+        SettingsTableView.register(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileTableViewCell")
         SettingsTableView.dataSource = self
         SettingsTableView.delegate = self
         SettingsTableView.reloadData()
